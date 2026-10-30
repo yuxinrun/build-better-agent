@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="canonical" href="https://yuxinks.github.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f4ee" />
+    <meta name="author" content="鱼心 · Yuxin" />
+    <title>如何构建更好的 Agent · 鱼心快跑</title>
+    <meta
+      name="description"
+      content="写给程序员转型 Agent 开发的实战手册：心智模型、上下文工程、工具设计、RAG、工作流、评估、可观测性、成本与多 Agent。中英双语，图解 + 清单 + 可运行代码。"
+    />
+    <meta property="og:title" content="如何构建更好的 Agent · 鱼心快跑" />
+    <meta
+      property="og:description"
+      content="别只会调 API，去造一个真正好用的 Agent。写给转型中的程序员和进阶中的 Agent 工程师。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:url" content="https://yuxinks.github.io/" />
+    <meta property="og:site_name" content="鱼心快跑 · Yuxin Runs" />
+    <meta property="og:image" content="https://yuxinks.github.io/yuxin-run.png" />
+    <meta property="og:image:alt" content="鱼心快跑：戴着耳机奔跑的青色小鱼" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://yuxinks.github.io/yuxin-run.png" />
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('yx-theme');
+          var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.dataset.theme = saved || (dark ? 'dark' : 'light');
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
