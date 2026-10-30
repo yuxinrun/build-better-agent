@@ -6,10 +6,10 @@ export const site = {
   author: '鱼心',
   authorEn: 'Yuxin',
   email: 'yuxink@126.com',
-  github: 'https://github.com/yuxinks',
+  github: 'https://github.com/yuxinrun',
   homepage: 'https://yuxin.run',
-  repo: 'https://github.com/yuxinks/yuxinks.github.io',
-  url: 'https://yuxinks.github.io/',
+  repo: 'https://github.com/yuxinrun/better-agent',
+  url: 'https://yuxinrun.github.io/better-agent/',
   motto: {
     zh: '鱼心快跑，Bug 追不到。',
     en: 'Run, Yuxin, run. Bugs cannot catch you.',

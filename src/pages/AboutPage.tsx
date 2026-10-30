@@ -103,7 +103,7 @@ export function AboutPage() {
               <a href={site.github} target="_blank" rel="noreferrer">
                 <Icon name="code" size={17} />
                 <span>GitHub</span>
-                <small>github.com/yuxinks</small>
+                <small>github.com/yuxinrun</small>
                 <Icon name="arrow-up-right" size={15} />
               </a>
               <a href={`mailto:${site.email}`}>
@@ -121,7 +121,7 @@ export function AboutPage() {
               <a href={site.repo} target="_blank" rel="noreferrer">
                 <Icon name="book" size={17} />
                 <span>{zh ? '本手册源码' : 'Handbook source'}</span>
-                <small>yuxinks.github.io</small>
+                <small>yuxinrun.github.io/better-agent</small>
                 <Icon name="arrow-up-right" size={15} />
               </a>
             </div>

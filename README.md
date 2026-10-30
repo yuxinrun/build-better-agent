@@ -2,13 +2,13 @@
 
 写给传统程序员转型 Agent 开发、以及 Agent 工程师进阶的实战手册。中英双语、明暗主题、桌面与移动端自适应。
 
-站点入口：`/#/`（HashRouter，静态托管无需额外 rewrite 配置）
+站点入口：<https://yuxinrun.github.io/better-agent/>（HashRouter，静态托管无需额外 rewrite 配置）
 
 ## 本地开发
 
 ```bash
 npm install
-npm run dev
+npm run dev       # http://localhost:5173/better-agent/
 ```
 
 ## 构建与预览
@@ -23,26 +23,20 @@ npm run lint      # oxlint
 
 ## 部署到 GitHub Pages
 
-目标站点：<https://yuxinks.github.io/>（仓库 `yuxinks/yuxinks.github.io`，域名根路径）。
+目标站点：<https://yuxinrun.github.io/better-agent/>（仓库 `yuxinrun/better-agent`，项目页子路径）。
 
-- `vite.config.ts` 的 `base` 为 `/`，与根路径部署对应。
+- `vite.config.ts` 的 `base` 为 `/better-agent/`，本地开发同样通过 `http://localhost:5173/better-agent/` 访问。
 - 路由使用 `HashRouter`，深链接形如 `/#/about`，GitHub Pages 刷新不会 404，无需 `404.html` 回退。
-- `public/.nojekyll` 会随构建进入 `dist/`，避免 Jekyll 处理静态资源。
+- `public/.nojekyll` 会随构建进入 `dist/`。
 
-发布（只推送 `dist/` 内的文件，不含 `dist` 目录本身）：
+自动化部署由 [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml) 完成：推送到 `main` 分支（或在 Actions 页手动触发）后，依次执行 `npm ci`、`npm run build`，并把 `dist/` 发布到 GitHub Pages。
 
-```bash
-npm run deploy
-# = npm run build && gh-pages -d dist -b main \
-#   -r https://github.com/yuxinks/yuxinks.github.io.git --no-history
-```
+首次启用时，在仓库 Settings → Pages → Build and deployment 中把 Source 设为 **GitHub Actions**；之后每次推送 `main` 都会自动更新站点。
 
 说明：
 
-1. 首次执行前确认本地有该仓库的推送权限（git 凭据或 `GH_TOKEN` 环境变量）。
-2. 该命令会强制替换目标仓库 `main` 分支的根目录内容，即网站文件本身就是仓库根目录。
-3. 在仓库 Settings → Pages 中选择 “Deploy from a branch” → `main` / `/ (root)`。
-4. 若以后改为项目页部署（`https://<user>.github.io/<repo>/`），把 `base` 改为 `'/<repo>/'` 并保持 HashRouter。
+1. 不需要本地推送构建产物，部署完全在 CI 中完成。
+2. 若以后改为自定义域名或根路径部署，同步修改 `vite.config.ts` 的 `base` 与 `index.html` 中的 canonical / OG 链接。
 
 ## 目录结构
 
